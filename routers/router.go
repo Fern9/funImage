@@ -1,10 +1,17 @@
 package routers
 
 import (
-	"github.com/zhusun/funImage/controllers"
 	"github.com/astaxie/beego"
+	"github.com/zhusun/funImage/controllers/user"
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+	ns := beego.NewNamespace(
+		"/v1",
+		beego.NSNamespace(
+			"/auth",
+			beego.NSRouter("/miniProgram/login", &user.LoginController{}, "post:MiniProgramLogin"),
+		),
+	)
+	beego.AddNamespace(ns)
 }

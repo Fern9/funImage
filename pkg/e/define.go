@@ -1,23 +1,36 @@
 package e
 
 type e struct {
-	Code int `json:"code"`
-	Message string `json:"message"`
-	Data interface{} `json:"data"`
+	Code    int         `json:"code"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
 }
 
-const(
+const (
 	//成功
-	SUCCESS="SUCCESS"
+	Success = "success"
+
+	//一般性错误定义
+
+	//参数错误
+	ParamsError="paramsError"
 
 	//用户未登录
-	NOT_AUTH="NOT_AUTH"
+	NotAuth = "notAuth"
+	//用户登录失败
+	AuthError = "authError"
+
+	//获取微信小程序用户信息失败
+	GetMiniProgramUserInfoError = "getMiniProgramUserInfoError"
 )
 
 var elist = map[string]e{
-	"SUCCESS": {0, "success", nil},
-	"NOT_AUTH": {2001, " 用户未登录", nil},
+	"success":   {0, "success", nil},
+
+	"paramsError": {1001, "参数错误", nil},
+
+	"notAuth":   {2001, " 用户未登录", nil},
+	"authError": {2002, " 用户登录失败", nil},
+
+	"getMiniProgramUserInfoError": {3001, "获取微信小程序用户信息失败", nil},
 }
-
-
-

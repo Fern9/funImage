@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "github.com/zhusun/funImage/routers"
 	"github.com/astaxie/beego"
+	_ "github.com/zhusun/funImage/models"
+	_ "github.com/zhusun/funImage/routers"
 )
 
 func main() {
 	beego.Run()
 }
-
