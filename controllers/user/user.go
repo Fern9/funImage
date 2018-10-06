@@ -27,3 +27,5 @@ func (c *UserController)GetUserInfo() {
 	c.ServeJSON()
 }
 
+
+

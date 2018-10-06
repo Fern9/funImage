@@ -9,7 +9,7 @@ func init() {
 	ns := beego.NewNamespace(
 		"/v1",
 		beego.NSNamespace(
-			"/auth",
+			"/user",
 			beego.NSRouter("/miniProgram/login", &user.LoginController{}, "post:MiniProgramLogin"),
 		),
 	)
