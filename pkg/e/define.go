@@ -19,6 +19,7 @@ const (
 	NotAuth = "notAuth"
 	//用户登录失败
 	AuthError = "authError"
+	GetUserInfoError = "getUserInfoError"
 
 	//获取微信小程序用户信息失败
 	GetMiniProgramUserInfoError = "getMiniProgramUserInfoError"
@@ -31,6 +32,7 @@ var elist = map[string]e{
 
 	"notAuth":   {2001, " 用户未登录", nil},
 	"authError": {2002, " 用户登录失败", nil},
+	"getUserInfoError": {2003, "获取用户信息失败", nil},
 
 	"getMiniProgramUserInfoError": {3001, "获取微信小程序用户信息失败", nil},
 }

@@ -21,9 +21,9 @@ func Put(token string, user user.User) error {
 	return nil
 }
 
-func Get(token string) (user.User) {
+func Get(token string) (interface{}) {
 	u := userCache.Get(token)
-	return u.(user.User)
+	return u
 }
 
 func Delete(token string) error {
